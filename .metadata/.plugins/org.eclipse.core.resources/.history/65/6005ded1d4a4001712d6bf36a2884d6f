@@ -1,0 +1,30 @@
+package ClassDay;
+
+public class Circle {
+	static float radius = 3;
+	static String color = "White";
+	final float PI = 3.14f;
+
+//Create default constructor
+	public Circle () {
+		System.out.println("radius and color of the circle respectively are: "+ radius + color);
+	}
+//Create parameterized constructor
+	
+	public Circle (float radius, String color) {
+		this.radius = radius;
+		this.color = color;
+		
+	}
+	
+	public float area () {
+		return radius*radius*PI;
+	}
+	
+	public static void main(String[] args) {
+		Circle k = new Circle();
+		System.out.println(k.area()) ;
+	}
+	
+	
+}

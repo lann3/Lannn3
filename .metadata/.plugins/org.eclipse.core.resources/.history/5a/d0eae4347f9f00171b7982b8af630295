@@ -1,0 +1,14 @@
+package com.fpt.demo.main;
+
+public class DemoClass {
+	public static void main(String[] args) {
+		for(int i = 1; i <= 50;i++) {
+			if((i % 2) == 0) {
+				System.out.println(i + "là số chẵn");
+			}
+			else {
+				System.out.println(i + "là số lẻ");
+			}
+		}
+	}
+}

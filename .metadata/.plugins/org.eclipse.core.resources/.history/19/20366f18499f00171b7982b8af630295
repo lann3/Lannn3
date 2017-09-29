@@ -1,0 +1,35 @@
+package main;
+
+public class Operator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x = 10;
+		int y = 17;
+		int sumXy = x + y;
+		int subXy = x - y;
+		int mulXy = x * y;
+		int devXy = y / x;
+		int duXy = y % x;
+		System.out.println(sumXy);
+		System.out.println(subXy);
+		System.out.println(mulXy);
+		System.out.println(devXy);
+		System.out.println(duXy);
+		
+		float a = 1.23456f;
+		float b = 56.54f;
+		float sumAb = a + b;
+		float sub = b - a;
+		float mul = a * b ;
+		float dev = a / b;
+		float duAb = a % b;
+		
+		System.out.println("tong hai so =" + sumAb);
+		System.out.println("hieu hai so ="+ sub);
+		System.out.println("tich hai so =" + mul);
+		System.out.println("thuong hai so =" +dev);
+		System.out.println("du hai so =" + duAb);
+	}
+
+}
