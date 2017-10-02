@@ -1,34 +1,36 @@
 package ClassDay;
 
 public class Circle {
-	float radius = 2;
-	String color = "White";
-	final float PI = 3.14f;
+	// this part is used to declare variables
+	private float radius;
+	private String color;
+	private final float PI = 3.14f;
 
-//Create default constructor
+	//Create default constructor 
 	public Circle () {
-		System.out.println("radius and color of the circle respectively are: " + radius + " " + color);
+		radius = 3.22f;
+		color = "Red";
 	}
-//Create parameterized constructor
+	//Create parameterized constructor
 	
 	public Circle (float r) {
 		radius = r;
 		
 	}
-	
-	
-	public float area () {
+	//this method is used to calculate area of circle
+	public float getArea () {
 		return radius*radius*PI;
+
 	}
 	
-	public static void main(String[] args) {
-		Circle c1 = new Circle();
-		Circle c2 = new Circle(2.5f);
-		
-		
-		System.out.println("area of circle 2 is: " + c2.area()) ;
-		System.out.println("area of circle 1 is: " + c1.area()) ;
+	//Option 2: Using getter and setter to take radius out
+	public void setRadius (float radius) {
+		this.radius = radius;
+		/*System.out.println("radius is " + radius);*/
+	}
+	public float getRadius () {
+		/*System.out.println("getting radius" + radius);*/
+		return this.radius;
 	}
 
-	
 }
