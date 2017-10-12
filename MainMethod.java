@@ -1,29 +1,39 @@
 package ClassDay;
 import java.lang.*;
+import java.util.Random;
 
 public class MainMethod {
 	public static void main(String[] args) {
+		
+		
+		Random rng = new Random ();
+		
+		
 		// Using for loop to create 10 circles in which contain 5 small circles with radius = 1/2 radius of parent circles
 		for (int i = 1; i <= 10; i++) {
+			String ranColor = Circle.randomColor("ABCXXY", 6);
 			
-			Circle C = new Circle ((float) Math.random());
-			System.out.println("Details of Parent Circle A " + i + " is: " + "Circle " + i + " ," + "Radius: " + C.getRadius());
+			Circle C = new Circle ((float)rng.nextInt(7), ranColor);
+			System.out.println("Circle A " + i + C);
+			
 			for (int a = 1; a <= 5; a++) {
-				Circle C1 = new Circle (C.getRadius() / 2);
-				System.out.println(a + ". Radius of child circle is: " + (C.getRadius() / 2) );
+				Circle C1 = new Circle (C.getRadius() / 2, ranColor);
+				System.out.println("Child Cicle A" + a + C1);
 			}
 		}
 		
 		// Using while loop to create 10 circles in which contain 5 small circles with radius = 1/2 radius of parent circles
 		int j = 1;
 		while (j <= 10) {
-			Circle C = new Circle ((float)Math.random());
-			System.out.println("Details of Parent Circle B " + j + " is: " + "Circle " + j + " ," + "Radius: " + C.getRadius());
+			String ranColor = Circle.randomColor("ABCXXY", 6);
+			
+			Circle C = new Circle ((float)Math.random(), ranColor);
+			System.out.println("Circle B " + j + C);
 			
 			int b = 1;
 			while (b <=5) {
-				Circle C1 = new Circle (C.getRadius() / 2);
-				System.out.println(b + ". Radius of child circle is: " + (C.getRadius() / 2) );
+				Circle C1 = new Circle (C.getRadius() / 2, ranColor);
+				System.out.println("Child Cicle B" + b + C1);
 				b++;
 			}
 			j++;
@@ -31,14 +41,16 @@ public class MainMethod {
 		// Using do...while loop to create 10 circles in which contain 5 small circles with radius = 1/2 radius of parent circles
 		int x = 1;
 		do {
-			Circle C = new Circle ((float)Math.random());
-			System.out.println("Details of Parent Circle C" + x + " is: " + "Circle " + x + " ," + "Radius: " + C.getRadius());
+			String ranColor = Circle.randomColor("ABCXXY", 6);
+			
+			Circle C = new Circle ((float)Math.random(), ranColor);
+			System.out.println("Circle C " + x + C);
 			x++;
 			
 			int c = 1;
 			do {
-				Circle C1 = new Circle (C.getRadius() / 2);
-				System.out.println(c + ". Radius of child circle is: " + (C.getRadius() / 2) );
+				Circle C1 = new Circle (C.getRadius() / 2, ranColor);
+				System.out.println("Child Cicle C" + c + C1);
 				c++;
 			} while (c <=5);
 		}while (x <= 10);
@@ -46,19 +58,21 @@ public class MainMethod {
 		/* Create Object named Ci1 using for parameterized constructor
 		 * value is 3.45
 		 */
-		Circle Ci1 = new Circle (3.45f);
+		String ranColor = Circle.randomColor("ABCXXY", 6);
+		
+		Circle Ci1 = new Circle (3.45f, ranColor);
 		
 		// declare variable "circleArea" and print area of circle
 		float circleArea = Ci1.getArea();
 		System.out.println("Area of circle: " + circleArea);
 		
 		//Option2: print out radius by using setter and getter
-		System.out.println("Radius of circle Ci1: " + Ci1.getRadius());
+		System.out.println("Ci1: " + Ci1);
 		
 		//Create object Ci2 using for default constructor
 		 
 		Circle Ci2 = new Circle ();
-		System.out.println("Radius of circle Ci2: " + Ci2.getRadius());
+		System.out.println("Ci2: " + Ci2);
 	
 	
 	/**
@@ -81,27 +95,32 @@ public class MainMethod {
 		System.out.println("Color of rectangle is: " + recColor);
 			
 		// Using for loop to create 10 rectangles with random height and width
+		
 		for (int i = 1; i <=10; i ++) {
-			Rectangle R = new Rectangle ((float)Math.random(), (float)Math.random(), "green");
-			System.out.println("Details of Parent Rectangle A" + i + " is: " + "Rectangle " + i + " ," + "Height: " + R.getHeight() +
-					" Width " + R.getWidth());
+			String rectangleColor = Rectangle.randomColor("XYZABC", 6);
+			
+			Rectangle R = new Rectangle ((float)Math.random(), (float)Math.random(), rectangleColor);
+			System.out.println("Rectangle A"+ i + R);
+			
 			for (int a =1; a <= 5; a++) {
 				Rectangle R1 = new Rectangle (R.getHeight() / 2, (R.getWidth()/2), "green");
-				System.out.println(a + ". Height and width of child rectangle is: " + (R.getHeight() / 2) + " and " + (R.getWidth()/2));
+				System.out.println("Child Rectangle A" + a + R1);
 			}
 		}
 			
 		// Using while loop to create 10 rectangles with random height and width
 		j = 1;
 		while (j <= 10) {
-			Rectangle R = new Rectangle ((float)Math.random(), (float)Math.random(), "green");
-			System.out.println("Details of Parent Rectangle B" + j + " is: " + "Rectangle " + j + " ," + "Height: " + R.getHeight() +
-					" Width " + R.getWidth());
+			String rectangleColor = Rectangle.randomColor("XYZABC", 6);
+			
+			Rectangle R = new Rectangle ((float)Math.random(), (float)Math.random(), rectangleColor);
+			System.out.println("Rectangle B" + j + R);
 			j++;
+			
 			int b = 1;
 			while (b <= 5) {
 				Rectangle R1 = new Rectangle (R.getHeight() / 2, (R.getWidth()/2), "green");
-				System.out.println(b + ". Height and width of child rectangle is: " + (R.getHeight() / 2) + " and " + (R.getWidth()/2));
+				System.out.println("Child Rectangle B" + b + R1);
 				b++;
 			}
 		}
@@ -109,14 +128,16 @@ public class MainMethod {
 		// Using do ... while loop to create 10 rectangles with random height and width
 		x = 1;
 		do {
-			Rectangle R = new Rectangle ((float)Math.random(), (float)Math.random(), "green");
-			System.out.println("Details of Parent Rectangle C" + x + " is: " + "Rectangle " + j + " ," + "Height: " + R.getHeight() +
-					" Width " + R.getWidth());
+			String rectangleColor = Rectangle.randomColor("XYZABC", 6);
+			
+			Rectangle R = new Rectangle ((float)Math.random(), (float)Math.random(), rectangleColor);
+			System.out.println("Rectangle C" + x + R);
 			x++;
+			
 			int c = 1;
 			do {
 				Rectangle R1 = new Rectangle (R.getHeight() / 2, (R.getWidth()/2), "green");
-				System.out.println(c + ". Height and width of child rectangle is: " + (R.getHeight() / 2) + " and " + (R.getWidth()/2));
+				System.out.println("Child Rectangle C" + c + R1);
 				c++;
 			} while (c <= 5);
 		} while (x <=10);
