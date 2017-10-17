@@ -9,6 +9,11 @@ public class Rectangle {
 	private String color;
 	private static Random rng = new Random ();
 	
+	public static String colRectangle () {
+		String[] colorArray = { "Green", "Red", "Purple", "Yellow", "Pink", "Brown", "White", "Black", "Blue", "Orange", "Grey", "Coral" };
+		return colorArray[rng.nextInt(12)];
+	}
+	
 	// Create parameterized constructor
 	
 	public Rectangle (float height, float width, String color) {

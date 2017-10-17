@@ -1,5 +1,5 @@
 package ClassDay;
-import java.util.Random;
+import java.util.*;
 public class Circle {
 	 //this part is used to declare variables
 	/**
@@ -23,6 +23,28 @@ public class Circle {
 		color = "Red";
 	}
 	
+	//using array to create random color 
+	public static  String colArray () {
+		
+		String[] colorArray = { "Green", "Red", "Purple", "Yellow", "Pink", "Brown", "White", "Black", "Blue", "Orange", "Grey", "Coral" };
+	
+		
+		return colorArray [rng.nextInt(12)];
+	}
+	// practices of Array List
+	public static ArrayList<Circle> circleList (float radius) {
+		ArrayList <Circle> al = new ArrayList <Circle> ();
+		
+		int[] circleArray = {2, 3, 4, 5, 6, 7, 8 };
+		int x = circleArray [rng.nextInt(7)];
+		for (int i = 1; i <= x; i++) {	
+			Circle C = new Circle(radius / 2, Circle.colArray());
+		al.add(C);
+		}
+		return al;
+	}
+	
+	
 	//Create parameterized constructor
 	/**
 	 * @param r is linked with radius 
@@ -33,6 +55,12 @@ public class Circle {
 		radius = r;
 		color = col;
 		
+	}
+	
+	public Circle (float radius,String [] color) {
+		this.radius = radius;
+		
+
 	}
 	//this method is used to calculate area of circle
 	public float getArea () {
@@ -69,5 +97,11 @@ public class Circle {
 	public String toString () {
 		return " has radius " + radius + " and color " + color;
 	}
+	
+	
+	
+	
+	
+	
 	
 }
