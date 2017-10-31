@@ -3,7 +3,7 @@ package ClassDay;
 public class Person {
 	private String fullname;
 	private int age;
-	private int id;
+	private String role;
 	private String worktitle;
 	private String gender;
 	
@@ -23,12 +23,12 @@ public class Person {
 		this.age = age;
 	}
 
-	public int getId() {
-		return id;
+	public String getRole() {
+		return role;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.role = role;
 	}
 
 	public String getWorktitle() {
@@ -47,15 +47,15 @@ public class Person {
 		this.gender = gender;
 	}
 	
-	public Person (String fullname, int age, int id, String worktitle, String gender) {
+	public Person (String fullname, int age, String role, String worktitle, String gender) {
 		this.fullname = fullname;
 		this.age = age;
-		this.id = id;
+		this.role = role;
 		this.worktitle = worktitle;
 		this.gender = gender;
 	}
 	public String toString () {
-		return "info of person: " + id + "  " + fullname +",  " + age+ " years old,  " + worktitle + ",  " + gender;
+		return "info of person: " + role + "  " + fullname +",  " + age+ " years old,  " + worktitle + ",  " + gender;
 	}
 	
 
@@ -63,11 +63,11 @@ public class Person {
 	public static void main(String[] args) {
 		String [] arrName = {"John", "Marry Jane", "Peter", "Daisy"};
 		int [] arrAge = {50, 40, 18, 16};
-		int [] arrId = {1, 2, 3, 4};
+		String [] arrRole = {"Father", "Mother", "Son", "Daughter"};
 		String[] arrWork = {"worker", "Teacher", "Student", "Student"};
 		String [] arrGender = {"Male", "Female", "Male", "Female"};
 		for(int g = 0; g < 4; g++) {
-			Person p1 = new Person (arrName[g], arrAge[g], arrId[g],arrWork [g], arrGender[g]);
+			Person p1 = new Person (arrName[g], arrAge[g], arrRole[g],arrWork [g], arrGender[g]);
 			System.out.println(p1);
 		}
 		
